@@ -1,0 +1,43 @@
+services:
+
+  frontend:
+    build: ./frontend
+    container_name: devopshub-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - devopshub-network
+
+  backend:
+    build: ./backend
+    container_name: devopshub-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - postgres
+    networks:
+      - devopshub-network
+
+  postgres:
+    image: postgres:18
+    container_name: devopshub-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: devopshub
+      POSTGRES_PASSWORD: devopshub_password
+      POSTGRES_DB: devopshub
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    networks:
+      - devopshub-network
+
+volumes:
+  postgres-data:
+
+networks:
+  devopshub-network:
+    driver: bridge

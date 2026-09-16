@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #111827;
+    line-height: 1.6;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: #2563eb;
+}
+
+#themeButton {
+    border: none;
+    background: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tag {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #4b5563;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.hero-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ARTICLES */
+
+.articles {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.section-heading p:last-child {
+    color: #6b7280;
+}
+
+
+.article-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.category {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #6b7280;
+}
+
+.read-button {
+    margin-top: 20px;
+
+    border: none;
+
+    background: #111827;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.read-button:hover {
+    background: #2563eb;
+}
+
+
+/* ABOUT */
+
+.about {
+    padding: 100px 8%;
+
+    background: #111827;
+    color: white;
+}
+
+.about div {
+    max-width: 700px;
+}
+
+.about h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about p:last-child {
+    color: #d1d5db;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    background: #030712;
+
+    color: #9ca3af;
+}
+
+
+/* DARK MODE */
+
+body.dark {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+body.dark .navbar {
+    background: #111827;
+    border-color: #374151;
+}
+
+body.dark .navbar a {
+    color: #e5e7eb;
+}
+
+body.dark .hero {
+    background: #0f172a;
+}
+
+body.dark .hero p {
+    color: #cbd5e1;
+}
+
+body.dark .card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark .card p {
+    color: #cbd5e1;
+}
+
+body.dark .section-heading p:last-child {
+    color: #cbd5e1;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 5%;
+    }
+
+    .articles {
+        padding: 70px 5%;
+    }
+
+    .about {
+        padding: 70px 5%;
+    }
+
+}
